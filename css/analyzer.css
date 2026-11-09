@@ -1,0 +1,147 @@
+.vtca-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  height: 30px;
+  padding: 0 10px;
+  margin-right: 6px;
+  border: 0;
+  border-radius: 4px;
+  background: #2f2f35;
+  color: #efeff1;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 120ms ease, color 120ms ease;
+}
+.vtca-btn svg { fill: currentColor; }
+.vtca-btn:hover { background: #3d3d44; }
+.vtca-btn-on, .vtca-btn-on:hover { background: #a970ff; color: #0e0e10; }
+
+.vtca-panel {
+  position: fixed;
+  z-index: 5000;
+  display: flex;
+  flex-direction: column;
+  background: #18181b;
+  color: #efeff1;
+  font-family: Inter, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  border-left: 1px solid #2f2f35;
+  box-shadow: -6px 0 18px rgba(0, 0, 0, .35);
+  overflow: hidden;
+}
+
+.vtca-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  min-height: 46px;
+  padding: 8px 12px 8px 18px;
+  background: #1f1f23;
+  border-bottom: 1px solid #2f2f35;
+  position: relative;
+  z-index: 2;
+}
+.vtca-title { display: flex; align-items: center; gap: 8px; min-width: 0; }
+.vtca-dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: #a970ff; box-shadow: 0 0 0 3px rgba(169, 112, 255, .18);
+  flex: 0 0 auto;
+}
+.vtca-titles { display: flex; flex-direction: column; min-width: 0; }
+.vtca-titles strong { font-size: 13px; font-weight: 700; white-space: nowrap; }
+.vtca-channel { font-size: 11px; color: #adadb8; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.vtca-head-actions { display: flex; gap: 6px; flex: 0 0 auto; }
+
+.vtca-ghost {
+  height: 24px;
+  padding: 0 8px;
+  border: 1px solid #3d3d44;
+  border-radius: 4px;
+  background: transparent;
+  color: #efeff1;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.vtca-ghost:hover { background: #2f2f35; }
+.vtca-x { font-size: 14px; line-height: 1; padding: 0 7px; }
+
+.vtca-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 12px;
+  border-bottom: 1px solid #2f2f35;
+  font-size: 11px;
+  color: #adadb8;
+  flex-wrap: wrap;
+}
+.vtca-check { display: inline-flex; align-items: center; gap: 5px; cursor: pointer; }
+.vtca-check input { accent-color: #a970ff; cursor: pointer; }
+.vtca-controls select {
+  margin-left: auto;
+  background: #2f2f35;
+  color: #efeff1;
+  border: 0;
+  border-radius: 4px;
+  padding: 3px 6px;
+  font-size: 11px;
+  cursor: pointer;
+}
+
+.vtca-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: #2f2f35;
+  border-bottom: 1px solid #2f2f35;
+}
+.vtca-stat { background: #1f1f23; padding: 8px 6px; text-align: center; }
+.vtca-stat b { display: block; font-size: 15px; color: #efeff1; }
+.vtca-stat span { font-size: 10px; color: #adadb8; text-transform: uppercase; letter-spacing: .04em; }
+
+.vtca-chart { flex: 1 1 auto; overflow-y: auto; padding: 8px 10px; }
+.vtca-chart::-webkit-scrollbar { width: 8px; }
+.vtca-chart::-webkit-scrollbar-thumb { background: #3d3d44; border-radius: 4px; }
+
+.vtca-row {
+  display: grid;
+  grid-template-columns: 20px minmax(56px, 30%) 1fr 44px 40px;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 0;
+  font-size: 12px;
+}
+.vtca-rank { color: #7c7c85; font-variant-numeric: tabular-nums; text-align: right; font-size: 11px; }
+.vtca-word { font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.vtca-bar { height: 9px; background: #2f2f35; border-radius: 3px; overflow: hidden; }
+.vtca-bar i { display: block; height: 100%; background: #7a5bd6; border-radius: 3px; transition: width 300ms ease; }
+.vtca-pct { text-align: right; font-variant-numeric: tabular-nums; color: #d5d5da; }
+.vtca-count { text-align: right; font-variant-numeric: tabular-nums; color: #7c7c85; font-size: 11px; }
+
+.vtca-row-hot .vtca-word { color: #d9c2ff; }
+.vtca-row-hot .vtca-bar i { background: #a970ff; }
+.vtca-row-hot:first-child .vtca-word { color: #fff; }
+.vtca-row-hot:first-child .vtca-bar i { background: linear-gradient(90deg, #a970ff, #d9c2ff); }
+
+.vtca-empty {
+  padding: 28px 10px;
+  text-align: center;
+  color: #adadb8;
+  font-size: 12px;
+  line-height: 1.6;
+}
+.vtca-empty span { font-size: 11px; color: #7c7c85; }
+
+.vtca-foot {
+  padding: 6px 12px;
+  border-top: 1px solid #2f2f35;
+  font-size: 10px;
+  color: #7c7c85;
+}

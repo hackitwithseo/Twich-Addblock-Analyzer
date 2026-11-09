@@ -1,0 +1,37 @@
+{
+  "manifest_version": 3,
+  "name": "Twitch AdBlock + Chat Analyzer",
+  "version": "1.0.0",
+  "description": "Blocks Twitch ads and analyzes chat words with live percentage charts.",
+  "minimum_chrome_version": "111",
+ "permissions": ["storage", "declarativeNetRequest", "scripting",
+"activeTab"],
+  "host_permissions": ["*://*.twitch.tv/*"],
+  "icons": { "128": "assets/logo_128.png" },
+  "action": {
+    "default_title": "Twitch AdBlock + Chat Analyzer",
+    "default_popup": "html/popup.html",
+    "default_icon": { "128": "assets/logo_128.png" }
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.twitch.tv/*"],
+      "js": ["js/tw.js"],
+      "run_at": "document_start",
+      "world": "MAIN",
+      "all_frames": true
+    },
+    {
+      "matches": ["*://*.twitch.tv/*"],
+      "js": ["js/analyzer.js"],
+      "css": ["css/analyzer.css"],
+      "run_at": "document_idle",
+      "all_frames": false
+    }
+  ],
+  "declarative_net_request": {
+    "rule_resources": [
+      { "id": "twitch_rules", "enabled": true, "path": "rules.json" }
+    ]
+  }
+}
